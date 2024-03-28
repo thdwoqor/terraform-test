@@ -1,0 +1,22 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - echo installing phase ...
+      - java --version
+      - gradle --version
+  pre_build:
+    commands:
+      - echo pre build phase
+  build:
+    commands:
+      - ./gradlew build
+  post_build:
+    commands:
+      - echo build successfully done
+
+artifacts:
+  files:
+    - build/libs/*.jar
+    - appspec.yml
+    - start.sh
