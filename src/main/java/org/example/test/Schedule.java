@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 @Component
 public class Schedule {
 
-    @Scheduled(cron = "0 */1 * * * *")
     public void sendMessage() throws InterruptedException {
         System.out.println("Start");
         System.out.println("Start");
