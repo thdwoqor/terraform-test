@@ -13,6 +13,6 @@ public class TestController {
     private String token2;
     @GetMapping("/good")
     public String test() {
-        return token1+token2;
+        return token1+token2+"hi";
     }
 }
