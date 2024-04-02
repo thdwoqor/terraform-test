@@ -7,10 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
 
-    @Value("${token}")
-    private String token;
+    @Value("${token1}")
+    private String token1;
+    @Value("${token2}")
+    private String token2;
     @GetMapping("/good")
     public String test() {
-        return token;
+        return token1+token2;
     }
 }
