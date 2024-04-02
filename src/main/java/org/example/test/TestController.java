@@ -1,14 +1,16 @@
 package org.example.test;
 
-import org.springframework.stereotype.Controller;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class TestController {
 
+    @Value("${token}")
+    private String token;
     @GetMapping("/good")
     public String test() {
-        return "good";
+        return token;
     }
 }
