@@ -7,21 +7,17 @@ phases:
       - gradle --version
   pre_build:
     commands:
-      - mkdir buildZone && cd buildZone
-      - git init
-      - git clone https://thdwoqor:$GITHUB_TOKEN@github.com/thdwoqor/terraform-test.git
-      - cd terraform-test  # 클론한 저장소로 이동
-      - git submodule update --init --recursive  # 서브모듈 초기화 및 업데이트
-      - ./gradlew build
+      - echo pre build phase
+      - echo `ls -al`
   build:
     commands:
-      - echo installing phase ...
+      - ./gradlew build
   post_build:
     commands:
       - echo build successfully done
 
 artifacts:
   files:
-    - buildZone/build/libs/*.jar
+    - build/libs/*.jar
     - appspec.yml
     - start.sh
