@@ -10,8 +10,8 @@ phases:
       - mkdir buildZone && cd buildZone
       - git init
       - git clone https://thdwoqor:$GITHUB_TOKEN@github.com/thdwoqor/terraform-test.git
-      - git submodule init
-      - git submodule update --remote
+      - cd terraform-test  # 클론한 저장소로 이동
+      - git submodule update --init --recursive  # 서브모듈 초기화 및 업데이트
       - ./gradlew build
   build:
     commands:
