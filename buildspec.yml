@@ -12,10 +12,10 @@ phases:
       - git clone https://thdwoqor:$GITHUB_TOKEN@github.com/thdwoqor/terraform-test.git
       - git submodule init
       - git submodule update --remote
+      - ./gradlew build
   build:
     commands:
-      - cd buildZone
-      - ./gradlew build
+      - echo installing phase ...
   post_build:
     commands:
       - echo build successfully done
