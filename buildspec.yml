@@ -5,11 +5,11 @@ phases:
       - echo installing phase ...
       - java --version
       - gradle --version
+      - git submodule init
+      - git submodule update --recursive
   pre_build:
     commands:
       - echo pre build phase
-      - git submodule init
-      - git submodule update --recursive
   build:
     commands:
       - ./gradlew build
