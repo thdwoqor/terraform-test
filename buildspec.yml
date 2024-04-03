@@ -7,6 +7,7 @@ phases:
       - gradle --version
   pre_build:
     commands:
+      - mkdir buildZone
       - git init
       - git remote add master https://$GITHUB_TOKEN@github.com/thdwoqor/terraform-test.git
       - git fetch
@@ -22,6 +23,6 @@ phases:
 
 artifacts:
   files:
-    - build/libs/*.jar
+    - buildZone/build/libs/*.jar
     - appspec.yml
     - start.sh
