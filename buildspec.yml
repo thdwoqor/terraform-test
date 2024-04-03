@@ -9,9 +9,7 @@ phases:
     commands:
       - mkdir buildZone && cd buildZone
       - git init
-      - git remote add master https://thdwoqor:$GITHUB_TOKEN@github.com/thdwoqor/terraform-test.git
-      - git fetch
-      - git checkout -t master/main
+      - git clone https://thdwoqor:$GITHUB_TOKEN@github.com/thdwoqor/terraform-test.git
       - git submodule init
       - git submodule update --remote
   build:
