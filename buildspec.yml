@@ -8,6 +8,8 @@ phases:
   pre_build:
     commands:
       - echo pre build phase
+      - git submodule init
+      - git submodule update --recursive
   build:
     commands:
       - ./gradlew build
